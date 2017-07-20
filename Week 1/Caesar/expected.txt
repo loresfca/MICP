@@ -13,5 +13,5 @@ vwx
 zab
 Y1z
 C5d
-Error
-Error
+Error: shift too large/small
+Error: shift too large/small

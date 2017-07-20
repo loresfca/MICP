@@ -4,7 +4,7 @@ import java.util.*;
 public class Solution {
 	public static String caesar(String s, int pos){
 		if(pos<-1000000000||pos>1000000000){
-        	return "Error, shift too large/small";		
+        	return "Error: shift too large/small";		
         }
 		int n = s.length();
 		if(n==0) return s;
