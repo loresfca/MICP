@@ -12,8 +12,8 @@ public class Solution {
 		for(;i<n;i++){
 			int cur = s.charAt(i) - 48;
 			if(cur>9||cur<0) throw new NumberFormatException();
-			if(res*10%10!=0) throw new NumberFormatException();
 			res = res*10+cur;
+			if(res%10!=cur) throw new NumberFormatException();
 		}
 		return res * sign;
 	}
