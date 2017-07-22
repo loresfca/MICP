@@ -1,0 +1,12 @@
+100
+97
+-97
+-100
+Error
+123
+-123
+Error
+Error
+Error
+Error
+-2147483647

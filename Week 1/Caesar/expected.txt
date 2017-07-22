@@ -1,0 +1,17 @@
+
+13
+57
+13
+79
+YZA
+CDE
+VWX
+ZAB
+yza
+cde
+vwx
+zab
+Y1z
+C5d
+Error: shift too large/small
+Error: shift too large/small
