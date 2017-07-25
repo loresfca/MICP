@@ -3,13 +3,14 @@ import java.util.*;
 
 public class Solution {
 	public static int atoi(String s){
+		if(s==null) throw new NumberFormatException();
 		int sign = 1;
-		int n = s.length();
-		if(n==0) throw new NumberFormatException();
-		if(s.charAt(0)==45) sign = -1;
+		int len = s.length();
+		if(len==0) throw new NumberFormatException();
+		if(s.charAt(0)=='-') sign = -1;
 		int i = 0; int res = 0;
 		if(sign==-1) i = 1;
-		for(;i<n;i++){
+		for(;i<len;i++){
 			int cur = s.charAt(i) - 48;
 			if(cur>9||cur<0) throw new NumberFormatException();
 			res = res*10+cur;
