@@ -2,17 +2,25 @@ import java.io.*;
 import java.util.*;
 
 public class Solution {
-	public static String caesar(String s, int pos){
+	public static String caesar(String s){
+		String[] comp = s.split(":");
+		int pos = 0;
+		try{
+			pos = Integer.parseInt(comp[0]);
+		}catch(Exception e){
+			return "Error: wrong shift number";	
+		}
+		
 		if(pos<-1000000000||pos>1000000000){
         	return "Error: shift too large/small";		
         }
-		int n = s.length();
-		if(n==0) return s;
+		if(comp.length==1) return null;
+		int len = comp[1].length();
 		boolean neg = false;
 		if(pos<0) neg = true;
 		StringBuilder res = new StringBuilder();
-		for(int i = 0; i<n; i++){
-			int cur = (int) s.charAt(i);
+		for(int i = 0; i<len; i++){
+			int cur = (int) comp[1].charAt(i);
 			int r = pos;
 			if(cur>=48&&cur<=57){
 				r = r%10;
@@ -55,8 +63,7 @@ public class Solution {
         	int t = Integer.parseInt(br.readLine());
 	        while(t-->0){
 	        	String s = br.readLine();
-	        	int pos = Integer.parseInt(br.readLine());
-	        	System.out.println(caesar(s,pos));
+	        	System.out.println(caesar(s));
 	        }
         }catch(Exception e){
         	System.out.println(e);
