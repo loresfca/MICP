@@ -1,0 +1,64 @@
+Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
+
+Talk:
+-The solution must not contain duplicate triplets
+-There can be duplicate elements in the original array
+-There can be negative and positive integers
+-The return type can be a bidimesional array or a list of lists.
+-The elements of the triplet must be sorted from lower to higher.
+
+Examples:
+-Empty array. 
+Input: []  
+Expected: []
+-Null array. 
+Input: null  
+Expected: []
+-Array with less than 3 elements.
+Input: [1,-1] 
+Expected: []
+-Array with no answer.
+Input : [1,2,3] 
+Expected: []
+-Array with unique elements and one answer.
+Input: [1,2,-3,4] 
+Expected: [[-3,1,2]]
+-Array with unique elements and multiple answers.
+Input: [1,2,3,-4,-5] 
+Expected: [[-4,1,3],[-5,2,3]]
+-Array with duplicates where the answer involves only one iteration of a value. (check for duplicate triplets)
+Input: [1,2,1,-3] 
+Expected:[[-3,1,2]]
+-Array with duplicates where the answer involves two iterations of a value. (check for duplicate triplets)
+Input: [1,2,1,-2] 
+Expected:[[-2,1,1]]
+-Array with duplicates and multiple answers
+Input: [1,2,1,-2,-3] 
+Expected: [[-2,1,1],[-3,1,2]]
+-Array where there would be an answer if the element were duplicated but it is not
+Input: [1,2,-2] Expected:[]
+-Array where the answer is 0
+Input: [0,0,0] Expected: [[0,0,0]]
+Brute Force:
+-Check all the triplets of the array and store the ones where the sum is 0
+Complexity (n^3).
+
+Optimization:
+-Apply 2Sum to the array where the goal is each element.x
+
+Implementation:
+(See code).
+
+Tests:
+(See code).
+
+Failed Ideas:
+-Store the sum of each pair of the array into a HashMap of Sets of pairs. Then for each element check if there is a key where the value of the 
+sum = 0. Store that into a Set of triplets. Return the set of triplets.
+Complexity (n^2).
+
+
+
+
+
+
