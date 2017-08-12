@@ -1,0 +1,21 @@
+Generate parenthesis:
+Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+
+Talk:
+-n<=0 -> Argument Exception
+-Null -> Argument Exception
+-max number of parenthesis is less than Integer.MAX_VALUE/2
+-Return type -> List of strings
+
+Examples:
+-Number of parenthesis < 0
+Input: -1 Expected: Argument Exception
+-Number of parenthesis is less than Integer.MAX_VALUE/2
+Input: 3 Expected: ["((()))","(()())","(())()","()(())","()()()"]
+
+Brute Force/Optimization (couldn't think of a way of optimizing this solution):
+Since each time it is possible to add one open or one open and one closed until all parenthesis are open, it is possible to follow this process recursively and once all the open parenthesis are complete the closed ones.
+
+WalkThrough:
+-Input validation
+-if the number of parenthesis in the string is less than 2*n append either one open or one open and one closed or one closed.

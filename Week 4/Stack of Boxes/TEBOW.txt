@@ -1,0 +1,35 @@
+Stack of boxes - TEBOW
+You are given a set of N types of rectangular 3-D boxes, where the ith box has height h, width w and length l. You task is to create a stack of boxes which is as tall as possible, but you can only stack a box on top of another box if the dimensions of the 2-D base of the lower box are each strictly larger than those of the 2-D base of the higher box. Of course, you can rotate a box so that any side functions as its base.It is also allowable to use multiple instances of the same type of box. You task is to complete the function maxHeight which returns the height of the highest possible stack so formed.
+
+Talk:
+-Boxes can be rotated
+-There can multiple instances of a box
+-Box before has to be strictly larger
+-the width, height and length of a box is 1<=N<=100
+-the number of types of boxes is 1<=N<=100
+
+Example:
+-box with size <=0
+Input: [[0,0,0][1,2,3][1,1,1]] Expected: ArgumentException
+-Null array 
+Input: null Expected: ArgumentException
+-Array with simple solution
+Input: [1,2,3] [4,5,6] [7,8,9] Expected: 45
+-Array where there are two boxes with the same area.
+Input: [1,2,3] [1,2,4] Expected: 10
+-Array where there are three boxes with the same area.
+Input: [1,2,3] [1,2,4] [1,2,5] Expected: 14
+
+Brute Force:
+Try all the possible combinations of boxes.
+Complexity: 
+
+Optimization:
+Calculate all the possible areas, sort the boxes according to that and sum the heights. If there are two or more boxes with the same height select the one with the biggest height. 
+Complexity: nlogn.
+
+WalkThrough:
+-Input validation
+-Calculate all possible areas
+-Sort the boxes
+-Add heights (check for area duplicates)
