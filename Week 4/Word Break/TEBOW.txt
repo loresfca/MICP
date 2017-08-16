@@ -1,0 +1,41 @@
+Word Break:
+Given an input string and a directory, find out if the input can be separated into a space separated sequence of dictionary words.
+
+Talk:
+-Empty string/dictionary -> false
+-Null string/dictionary -> Argument Exception
+-Repeated dictionary words in string allowed
+-NOT case sensitive.
+
+Examples:
+-Empty string 
+Input: "",["a","b"] Expected: false
+-Empty dictionary
+Input: "a", [] Expected: false
+-Null string
+Input: null,["a","b"] Expected: Argument exception
+-Null dictionary
+Input: "a",null Expected: Argument exception
+-Valid String (no upper)
+Input: "abc",["a","b","c"] Expected: true
+-Valid String (uppercase involved)
+Input: "Abc",["a","b","c"] Expected: true
+-No solution
+Input: "abb",["a"] Expected: false
+-String where there are 2 valid prefixes but one of them returns false in the end
+Input: "aab",["a","ab"] Expected: true
+-Dictionary string happens twice
+Input: "abb",["a","b"] Expected: true
+
+Brute Force:
+Get all the possible prefix of all sizes and check recursively the suffix.
+Complexity 2^n
+
+Optimization:
+Store the strings previously seen and the result they give. 
+Complexity n^2
+
+WalkThrough:
+1.- Input validation
+2.- Check recursively the prefix and the suffix of the string and store seen strings
+4.- return result
