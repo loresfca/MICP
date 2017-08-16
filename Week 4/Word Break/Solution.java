@@ -10,7 +10,7 @@ public class Solution {
     	HashMap<String,Boolean> suffix = new HashMap<String,Boolean>();
     	s = s.toLowerCase();
     	for(int i = 0; i<dict.length;i++) dict[i].toLowerCase();
-    	Arrays.sort(dict);
+    	Arrays.sort(dict); //for binary search
     	//Start of recursion.
     	return validDict(s,dict,suffix);
     }
@@ -65,7 +65,7 @@ public class Solution {
    		}catch(IllegalArgumentException e){
    			error = true;
    		}
-   		/*assertEquals(true,error);
+   		assertEquals(true,error);
         //Empty String
         assertEquals(false,validDict("",new String[]{"a","b"}));
         //Empty dictionary 
@@ -73,12 +73,12 @@ public class Solution {
         //Valid String & dictionary (no upper)
         assertEquals(true,validDict("ab",new String[]{"a","b"}));
         //Valid String & dictionary (Upper)
-        assertEquals(true,validDict("Abc",new String[]{"a","b","c"})); */
+        assertEquals(true,validDict("Abc",new String[]{"a","b","c"})); 
         //No solution
         assertEquals(false,validDict("abb",new String[]{"a"})); 
         //String where there are two valid prefix but one returns false in the end
-        /*assertEquals(true,validDict("aab",new String[]{"a","ab"})); 
+        assertEquals(true,validDict("aab",new String[]{"a","ab"})); 
         //dictionary string happens twice
-        assertEquals(true,validDict("abb",new String[]{"a","b"})); */
+        assertEquals(true,validDict("abb",new String[]{"a","b"})); 
    }
 }
