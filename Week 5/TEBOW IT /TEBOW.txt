@@ -1,0 +1,53 @@
+Is a Palindrome
+Write a function to check if a linked list is a palindrome
+
+Talk:
+-All ascii characters
+-Input: Head of the list
+-Null : NullPointerException
+-Return true/false
+-Single linked list
+(assumptions)
+-No variable with the length
+-Additional data structures allowed
+-Case sensitive
+
+Example:
+-Null node
+Input: null Expected: Exception
+-Single node
+Input: a->null Expected: true
+-Correct even length
+Input: a->a->null Expected: true
+-Correct odd length
+Input: a->b->a->null Expected: true
+-Incorrect even
+Input: a->b->null Expected: false
+-Incorrect odd
+Input: a->a->b->null Expected: false;
+-Correct special characters
+Input: *-> ->*->null Expected: true
+-Incorrect upper and lowercase
+Input: A->b->a->null Expected: false
+
+Brute Force:
+Get the length of the list, store it into an Array and then check is it is a palindrome
+Complexity:
+	Time = O(2n+n/2) ≈ O(n)
+	Space = O(n)
+
+Optimization (Slightly better):
+Get the length, store the first half into a stack and then check with the other half.
+Complexity:
+	Time = O(2n) ≈ O(n)
+	Space = O(n/2) ≈ O(n)
+
+WalkThrough:
+-Input validation
+-Traverse the list to get length
+-Store the first half
+-Compare stack.pop() with next element
+	-If equal repeat until empty
+	-if not return false
+-if the stack is empty return true
+
