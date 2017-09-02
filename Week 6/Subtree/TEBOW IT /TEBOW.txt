@@ -1,0 +1,31 @@
+Check Subtree
+Given 2 non-empty binary trees s and t, check whether t is a subtree of s
+
+Talk:
+-Binary trees (No AVL or BST)
+-Duplicates allowed
+-if t = null return true, if s = null return false
+-Return type = bolean
+-input: root of both trees.
+
+Examples:
+(Check screenshots)
+
+Brute force:
+Traverse all nodes using DFS.
+Complexity:
+Space = O(n);
+Time = [not sure]
+
+Optimization:
+Use BFS to check each level to if any is the same ad the root of t, then traverse both trees together. If they are the same return true, if not continue with BFS to check for duplicates.
+Complexity:
+Space: 2^height of the tree for the queue and the number of nodes in each candidate tree until they are different.
+Time = O(n) [Having a hard time figuring out the time complexity of this one]
+
+Walkthrough:
+-Input validation
+-Perform BFS
+	- if t.value = s.value
+		-traverse together, if equal return true
+-if BFS not succesful return false
